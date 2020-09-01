@@ -2,10 +2,10 @@ require('dotenv').config();
 import mysql from "mysql2";
 
 let connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Sufia@0208Ashraf',
-    database: 'nodesqldb'
+    host: process.env.HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 });
 
 connection.connect(function(err) {
